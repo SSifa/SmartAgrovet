@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Smart Agrovet</string>
+    <string name="about_us">About Us</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="meet_farmers">Meet Farmers</string>
+    <string name="visit_agrovets">Visit Agrovets</string>
+    <string name="contact_experts">Contact Experts</string>
+    <string name="disease_control">Disease Control</string>
+    <string name="disease_diagnosis">Disease Diagnosis</string>
+    <string name="crop_disease">Crop Disease</string>
+    <string name="predict">Predict</string>
+    <string name="capture">Capture</string>
+    <string name="select_image">Select image</string>
+    <string name="crop_image">Crop Image</string>
+    <string name="select_crop_type">Select Crop to Diagnose</string>
+    <string name="maize">Maize</string>
+    <string name="sugarcane">Sugarcane</string>
+    <string name="banana">Banana</string>
+    <string name="beans">Beans</string>
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.smartagrovet">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/plant_64"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/plant_64"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SmartAgrovet" >
+        <activity
+            android:name=".MaizeDiseasesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ControlActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SugarcaneActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BeansActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BananaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CropTypeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MaizeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
