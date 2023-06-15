@@ -220,7 +220,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/userAccountCdView"
+            android:id="@+id/aboutCdView"
             android:layout_width="100dp"
             android:layout_height="100dp"
             app:cardCornerRadius="15dp"

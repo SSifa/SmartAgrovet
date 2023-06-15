@@ -15,7 +15,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginLeft="12dp"
         android:layout_marginRight="12dp"
-        android:text="@string/select_crop_type"
+        android:text="@string/crop_type"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="32sp"

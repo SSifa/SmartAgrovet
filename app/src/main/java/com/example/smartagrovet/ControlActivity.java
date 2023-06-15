@@ -29,7 +29,7 @@ public class ControlActivity extends AppCompatActivity {
         maizeCdView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MaizeActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MaizeDiseasesActivity.class);
                 startActivity(intent);
             }
         });
@@ -37,7 +37,7 @@ public class ControlActivity extends AppCompatActivity {
         bananaCdView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), BananaActivity.class);
+                Intent intent = new Intent(getApplicationContext(), BananaDiseasesActivity.class);
                 startActivity(intent);
             }
         });
@@ -45,7 +45,7 @@ public class ControlActivity extends AppCompatActivity {
         beansCdView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), BeansActivity.class);
+                Intent intent = new Intent(getApplicationContext(), BeansDiseasesActivity.class);
                 startActivity(intent);
             }
         });
@@ -53,7 +53,7 @@ public class ControlActivity extends AppCompatActivity {
         sugarcaneCdView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SugarcaneActivity.class);
+                Intent intent = new Intent(getApplicationContext(), SugarcaneDiseasesActivity.class);
                 startActivity(intent);
             }
         });

@@ -5,6 +5,7 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
+
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -13,7 +14,28 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/plant_64"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SmartAgrovet" >
+        android:theme="@style/Theme.SmartAgrovet">
+        <activity
+            android:name=".AboutusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FarmersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AgrovetsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ExpertsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SugarcaneDiseasesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BeansDiseasesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BananaDiseasesActivity"
+            android:exported="false" />
         <activity
             android:name=".MaizeDiseasesActivity"
             android:exported="false" />
@@ -37,7 +59,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
