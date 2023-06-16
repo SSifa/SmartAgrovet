@@ -7,15 +7,13 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    CardView detectionCdView;
-    CardView diseaseControlCdView;
-    CardView expertsCdView;
-    CardView agrovetsCdView;
-    CardView farmersCdView;
-    CardView aboutCdView;
+    Button btnLogin;
+    TextView tv;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -23,47 +21,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        detectionCdView = findViewById(R.id.detectionCdView);
-        diseaseControlCdView = findViewById(R.id.diseaseControlCdView);
-        expertsCdView = findViewById(R.id.expertsCdView);
-        agrovetsCdView = findViewById(R.id.agrovetsCdView);
-        farmersCdView = findViewById(R.id.farmersCdView);
-        aboutCdView = findViewById(R.id.aboutCdView);
+        btnLogin = findViewById(R.id.btnRegister);
+        tv = findViewById(R.id.txtRegLogin);
 
-        detectionCdView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, CropTypeActivity.class));
-            }
-        });
-        diseaseControlCdView.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ControlActivity.class));
+                Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
+                startActivity(intent);
             }
         });
-        expertsCdView.setOnClickListener(new View.OnClickListener() {
+
+        tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ExpertsActivity.class));
-            }
-        });
-        agrovetsCdView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), AgrovetsActivity.class));
-            }
-        });
-        farmersCdView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), FarmersActivity.class));
-            }
-        });
-        aboutCdView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), AboutusActivity.class));
+                startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
             }
         });
     }

@@ -16,6 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartAgrovet">
         <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="false" />
+        <activity
             android:name=".AboutusActivity"
             android:exported="false" />
         <activity

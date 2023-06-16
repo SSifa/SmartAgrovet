@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="10dp"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:id="@+id/nameTxtView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/imageView"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        tools:text="Name"/>
+
+    <TextView
+        android:id="@+id/emailTxtView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameTxtView"
+        android:layout_toEndOf="@+id/imageView"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        android:textSize="15sp"
+        tools:text="example@gmail.com"/>
+
+    <TextView
+        android:id="@+id/specialityTxtView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_below="@+id/emailTxtView"
+        android:textColor="@color/black"
+        tools:text="Specialization"/>
+
+    <TextView
+        android:id="@+id/phoneTxtView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_below="@+id/specialityTxtView"
+        android:textColor="@color/black"
+        tools:text="Phone"/>
+
+    <TextView
+        android:id="@+id/locationTxtView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_below="@+id/phoneTxtView"
+        android:textColor="@color/black"
+        tools:text="Location"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#9F9E9E"
+        android:layout_below="@+id/locationTxtView"
+        android:layout_marginTop="10dp"/>
+
+</RelativeLayout>
