@@ -38,7 +38,7 @@ public class SugarcaneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sugarcane);
 
-        String[] label = {"Common Rust", "Gray Leaf Spot", "Healthy", "Leaf Blight"};
+        String[] label = {"Healthy", "Red Rot", "Red Rust"};
         int count = 0;
 
         try {

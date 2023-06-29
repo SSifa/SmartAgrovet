@@ -18,12 +18,14 @@
             android:layout_height="match_parent"
             android:layout_marginTop="5dp">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageView"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FF000000"/>
 
             <TextView
                 android:id="@+id/nameTxtView"

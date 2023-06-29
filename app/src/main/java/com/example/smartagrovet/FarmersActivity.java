@@ -7,10 +7,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
+import com.google.firebase.database.DatabaseReference;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class FarmersActivity extends AppCompatActivity {
+
+    DatabaseReference reference;
 
     @SuppressLint("MissingInflatedId")
     @Override

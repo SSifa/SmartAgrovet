@@ -36,7 +36,7 @@ public class BeansActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beans);
 
-        String[] label = {"Common Rust", "Gray Leaf Spot", "Healthy", "Leaf Blight"};
+        String[] label = {"Angular Leaf Spot", "Bean Rust", "Healthy"};
         int count = 0;
 
         try {

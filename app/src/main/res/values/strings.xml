@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Smart Agrovet</string>
+    <string name="app_name">FarmEzzy</string>
     <string name="about_us">About Us</string>
     <string name="dashboard">Dashboard</string>
     <string name="meet_farmers">Meet Farmers</string>
@@ -18,4 +18,20 @@
     <string name="sugarcane">Sugarcane</string>
     <string name="banana">Banana</string>
     <string name="beans">Beans</string>
+    <string name="smart_agrovet">FarmEzzy</string>
+    <string name="registration">Registration</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="place_of_residence">Place of residence</string>
+    <string name="land_size">Size of Land in Acres</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="already_registered_login">Already registered, Login</string>
+    <string name="new_use_register">New use, Register</string>
+    <string name="login">Login</string>
+    <string name="passd">Password</string>
+    <string name="username">Username</string>
+    <string name="phone_number">Phone Number</string>
 </resources>

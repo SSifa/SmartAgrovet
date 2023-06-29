@@ -36,7 +36,7 @@ public class BananaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_banana);
 
-        String[] label = {"Common Rust", "Gray Leaf Spot", "Healthy", "Leaf Blight"};
+        String[] label = {"Healthy", "Segatoka", "Xamthomonas"};
         int count = 0;
 
         try {
