@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.smartagrovet.ml.MaizeModel;
 
@@ -38,14 +39,12 @@ public class MaizeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_maize);
 
         String[] label = {"Common Rust", "Gray Leaf Spot", "Healthy", "Leaf Blight"};
-        int count = 0;
 
         try {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(getAssets().open("labels.txt")));
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(getAssets()
+                    .open("labels.txt")));
             String line = bufferedReader.readLine();
             while(line != null){
-                //labels[count] = line;
-                count++;
                 line = bufferedReader.readLine();
             }
         } catch (IOException e) {
@@ -87,7 +86,8 @@ public class MaizeActivity extends AppCompatActivity {
                     MaizeModel model = MaizeModel.newInstance(getApplicationContext());
 
                     // Creates inputs for reference.
-                    TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 256, 256, 3}, DataType.FLOAT32);
+                    TensorBuffer inputFeature0 = TensorBuffer
+                            .createFixedSize(new int[]{1, 256, 256, 3}, DataType.FLOAT32);
 
                     TensorImage tensorImage = new TensorImage(DataType.FLOAT32);
                     tensorImage.load(imgBitmap);
@@ -98,10 +98,18 @@ public class MaizeActivity extends AppCompatActivity {
                     MaizeModel.Outputs outputs = model.process(inputFeature0);
                     TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
 
+                    float [] confidence = outputFeature0.getFloatArray();
+
                     // Releases model resources if no longer used.
                     model.close();
 
-                    txtViewPrediction.setText(new StringBuilder().append(label[getMax(outputFeature0.getFloatArray())]).append("").toString());
+                    if (confidence[getMax(confidence)] < 70){
+                        Toast.makeText(getApplicationContext(),
+                                "Incorrect or unclear image!",
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        txtViewPrediction.setText(String.format("%s", label[getMax(confidence)]));
+                    }
                 } catch (IOException e) {
                     // TODO Handle the exception
                 }
@@ -121,14 +129,15 @@ public class MaizeActivity extends AppCompatActivity {
     }
 
     void getPermission(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (checkSelfPermission(android.Manifest.permission.CAMERA) != getPackageManager().PERMISSION_GRANTED);
-            ActivityCompat.requestPermissions(MaizeActivity.this, new String[]{android.Manifest.permission.CAMERA}, 11);
-        }
+        checkSelfPermission(android.Manifest.permission.CAMERA);
+        getPackageManager();
+        ActivityCompat.requestPermissions(MaizeActivity.this,
+                new String[]{android.Manifest.permission.CAMERA}, 11);
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                           int[] grantResults) {
         if (requestCode == 11){
             if (grantResults.length > 0){
                 if (grantResults[0] != getPackageManager().PERMISSION_GRANTED){

@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.smartagrovet.ml.SugarcaneModel2;
 
@@ -39,14 +40,12 @@ public class SugarcaneActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sugarcane);
 
         String[] label = {"Healthy", "Red Rot", "Red Rust"};
-        int count = 0;
 
         try {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(getAssets().open("labels.txt")));
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(getAssets()
+                    .open("labels.txt")));
             String line = bufferedReader.readLine();
             while(line != null){
-                //labels[count] = line;
-                count++;
                 line = bufferedReader.readLine();
             }
         } catch (IOException e) {
@@ -88,7 +87,8 @@ public class SugarcaneActivity extends AppCompatActivity {
                     SugarcaneModel2 model = SugarcaneModel2.newInstance(getApplicationContext());
 
                     // Creates inputs for reference.
-                    TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 256, 256, 3}, DataType.FLOAT32);
+                    TensorBuffer inputFeature0 = TensorBuffer
+                            .createFixedSize(new int[]{1, 256, 256, 3}, DataType.FLOAT32);
 
                     TensorImage tensorImage = new TensorImage(DataType.FLOAT32);
                     tensorImage.load(imgBitmap);
@@ -99,10 +99,18 @@ public class SugarcaneActivity extends AppCompatActivity {
                     SugarcaneModel2.Outputs outputs = model.process(inputFeature0);
                     TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
 
+                    float [] confidence = outputFeature0.getFloatArray();
+
                     // Releases model resources if no longer used.
                     model.close();
 
-                    txtViewPrediction.setText(new StringBuilder().append(label[getMax(outputFeature0.getFloatArray())]).append("").toString());
+                    if (confidence[getMax(confidence)] < 70){
+                        Toast.makeText(getApplicationContext(),
+                                "Incorrect or unclear image!",
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        txtViewPrediction.setText(String.format("%s", label[getMax(confidence)]));
+                    }
                 } catch (IOException e) {
                     // TODO Handle the exception
                 }
@@ -121,10 +129,8 @@ public class SugarcaneActivity extends AppCompatActivity {
     }
 
     void getPermission(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (checkSelfPermission(android.Manifest.permission.CAMERA) != getPackageManager().PERMISSION_GRANTED);
-            ActivityCompat.requestPermissions(SugarcaneActivity.this, new String[]{android.Manifest.permission.CAMERA}, 11);
-        }
+        if (checkSelfPermission(android.Manifest.permission.CAMERA) != getPackageManager().PERMISSION_GRANTED);
+        ActivityCompat.requestPermissions(SugarcaneActivity.this, new String[]{android.Manifest.permission.CAMERA}, 11);
     }
 
     @Override

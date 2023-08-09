@@ -16,7 +16,7 @@ public class ExpertsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_experts);
 
-        List<Expert> expert = new ArrayList<Expert>();
+        List<Expert> expert = new ArrayList<>();
         expert.add(new Expert(R.drawable.a,"Ngombo", "sifangombo254@gmail.com", "Developer", 701249103, "Malindi"));
         expert.add(new Expert(R.drawable.b, "Sifa", "sifangombo2@gmail.com", "Nutritionist", 701249103, "Nyeri"));
         expert.add(new Expert(R.drawable.c,"Stephen", "sifangombo25@gmail.com", "Vetrinary Officer", 701249103, "Mombasa"));

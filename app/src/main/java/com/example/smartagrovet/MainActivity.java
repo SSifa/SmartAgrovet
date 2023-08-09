@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 final String phoneTxt = tvPhone.getText().toString().trim();
                 final String passwordTxt = tvPassword.getText().toString().trim();
 
-                if (phoneTxt.isEmpty() || passwordTxt.isEmpty()){
+                /*if (phoneTxt.isEmpty() || passwordTxt.isEmpty()){
                     Toast.makeText(getApplicationContext(), "Please enter Phone number or " +
                             "password", Toast.LENGTH_SHORT).show();
                 }else {
@@ -76,10 +76,12 @@ public class MainActivity extends AppCompatActivity {
                         }
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
-
+                            Toast.makeText(getApplicationContext(), "Check your internet connection", Toast.LENGTH_SHORT).show();
                         }
                     });
-                }
+                }*/
+                startActivity(new Intent(getApplicationContext(),
+                        DashboardActivity.class));
             }
         });
 
